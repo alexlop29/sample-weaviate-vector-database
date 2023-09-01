@@ -1,0 +1,16 @@
+{
+  "name": "sample-weaviate-vector-database",
+  "version": "1.0.0",
+  "description": "Contains a sample project to test the capabilities of Weaviate's vector database, using TypeScript, Node.js, and OpenAPI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "openai": "^4.4.0",
+    "weaviate-ts-client": "^1.5.0"
+  }
+}
