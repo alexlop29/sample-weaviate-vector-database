@@ -11,5 +11,5 @@ Contains a sample project to test the capabilities of Weaviate's vector database
 - `node v20.5.1 `
 
 ```
-npm init -y && npm install openai weaviate-ts-client
+npm init -y && npm install openai weaviate-ts-client dotenv
 ```
