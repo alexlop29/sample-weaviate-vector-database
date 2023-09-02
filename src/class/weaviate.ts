@@ -1,24 +1,30 @@
 import weaviate, { WeaviateClient, ApiKey } from 'weaviate-ts-client';
 import { WEAVIATE_API_KEY, WEAVIATE_HOST } from '../config/environment';
 
-class connecToWeaviate {
+class weaviateDB {
     host = WEAVIATE_HOST
     apiKey = WEAVIATE_API_KEY
+    conn
 
     connect() {
       try {
-        return weaviate.client({
+        this.conn = weaviate.client({
           scheme: 'https',
           host: this.host,
           apiKey: new ApiKey(this.apiKey),
         });
       }
       catch (error) {
-
+        throw new Error("Unable to connect to weaviate");
       }
     }
 
-    greet(name: string) {
-        console.log(`${name}, do your stuff!`);
+    createClass(classObj) {
+      this.conn.schema
+        .classCreator()
+        .withClass(classObj)
+        .do();
     }
 }
+
+export { weaviateDB }

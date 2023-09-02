@@ -1,0 +1,1 @@
+export { weaviateDB } from './weaviate';
